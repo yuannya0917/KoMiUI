@@ -4,6 +4,8 @@ import Alert, { AlertType } from './components/Alert/alert'
 import Menu from './components/Menu/menu';
 import MenuItem from './components/Menu/menuItem';
 import SubMenu from './components/Menu/subMenu';
+import Tabs from './components/Tabs/tabs';
+import TabsItem from './components/Tabs/tabsItem';
 import { buildTimeValue } from '@testing-library/user-event/dist/utils';
 import { format } from 'path';
 function App() {
@@ -14,6 +16,16 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <Tabs type='line'>
+            <TabsItem label='LineTab1'>This is Tab1</TabsItem>
+            <TabsItem label='LineTab2'>This is Tab2</TabsItem>
+            <TabsItem label='LineTab3' disabled={true}>This is Tab3</TabsItem>
+       </Tabs>
+       <Tabs type='card'>
+            <TabsItem label='CardTab1'>This is Tab1</TabsItem>
+            <TabsItem label='Cardtab2'>This is Tab2</TabsItem>
+            <TabsItem label='Cardtab3' disabled={true}>This is Tab3</TabsItem>
+       </Tabs>
          <Menu onSelect={(index) => { alert(index) }} mode="vertical">
           <MenuItem>cool link</MenuItem>
           <MenuItem disabled>cool link2</MenuItem>
