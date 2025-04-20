@@ -6,8 +6,8 @@ const defaultProps={
 }
 
 const testProps:ButtonProps={
-    btnType:ButtonType.Primary,
-    size:ButtonSize.Large,
+    btnType:'primary',
+    size:'lg',
     className:'klass'
 }
 
@@ -43,7 +43,7 @@ describe('test Button component', () => {
     })
     //行为测试用例，验证Button是否能正确渲染成<a>标签
     it('should render a link when btnType equals link andhref is provided',()=>{
-        const wrapper=render(<Button btnType={ButtonType.Link} href="...">Link</Button>)
+        const wrapper=render(<Button btnType={'link'} href="...">Link</Button>)
         const element=wrapper.getByText('Link')
         expect(element).toBeInTheDocument()
         //组件渲染为<a>标签

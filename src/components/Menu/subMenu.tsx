@@ -1,7 +1,10 @@
-import React,{Children, ReactNode, useContext,useState} from "react";
+import React,{Children, ReactNode, useContext,useRef,useState} from "react";
 import classNames from "classnames";
+import { CSSTransition } from "react-transition-group";
 import {MenuContext} from'./menu'
 import { MenuItemProps } from "./menuItem";
+import Icon from "../Icon/icon";
+import Transition from "../Transition/transition";
 
 export interface SubMenuProps{
     index?:string;
@@ -12,9 +15,11 @@ export interface SubMenuProps{
 
 const SubMenu:React.FC<SubMenuProps>=({index,title,className,children})=>{
     const[menuOpen,setOpen]=useState(false);
+    const nodeRef=useRef(null)
     const context=useContext(MenuContext)
     const classes=classNames('menu-item submenu-item',className,{
-        'is-active':context.index===index
+        'is-active':context.index===index,
+        'is-opened':menuOpen,
     })
     const handleClick=(e:React.MouseEvent)=>{
         e.preventDefault()
@@ -48,15 +53,27 @@ const SubMenu:React.FC<SubMenuProps>=({index,title,className,children})=>{
             }
         })
         return(
-            <ul className={subMenuClasses}>
-                {childrenComponent}
-            </ul>
+            <Transition
+                in={menuOpen}
+                timeout={300}
+                classNames="zoom-in-top"
+                appear
+                nodeRef={nodeRef}
+                unmountOnExit
+            >
+                    <ul className={subMenuClasses} ref={nodeRef}>
+                        {childrenComponent}
+                    </ul>
+            </Transition>
+
         )
     }
     return (
         <li key={index} className={classes} {...hoverEvents}>
-            <div className="submenu-title" onClick={handleClick}>{title}</div>
-            {renderChildren()}
+            <div className="submenu-title" onClick={handleClick}>{title}
+                <Icon icon="angle-down" className='arrow-icon'></Icon>
+            </div>
+                {renderChildren()}
         </li>
     )
 }

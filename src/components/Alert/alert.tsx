@@ -1,4 +1,4 @@
-import React ,{useState}from "react";
+import React ,{useRef, useState}from "react";
 import classNames from "classnames";
 import Transition from "../Transition/transition";
 
@@ -30,6 +30,7 @@ const Alert:React.FC<BaseAlertProps>=({
     closable=true,
     ...restProps
 })=>{
+    const nodeRef=useRef(null)
     const classes=classNames('alert',className,{
         [`alert-${type}`]:type
     })
@@ -39,13 +40,18 @@ const Alert:React.FC<BaseAlertProps>=({
         setVisible(false);
     }
 
-    if(!visible) return null;
     return(
-        <Transition in={visible} animation="zoom-in-left" timeout={300} wrapper={true}>
-            <div className={classes}>
+        <Transition 
+        in={visible} 
+        animation="zoom-in-top" 
+        timeout={300} 
+        nodeRef={nodeRef} 
+        appear
+        unmountOnExit>
+            <div className={classes} ref={nodeRef}>
                 {title?<h4 className="alert-title">{title}</h4>:null}
                 <p className="alert-message">{description}</p>
-                {closable?<button className="close" onClick={()=>{handleClick()}}>×</button>:null}
+                {closable?<button className="close" onClick={handleClick}>×</button>:null}
             </div>
         </Transition>
     )
