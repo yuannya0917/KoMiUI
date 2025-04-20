@@ -19,13 +19,14 @@ function App() {
         <Tabs type='line'>
             <TabsItem label='LineTab1'>This is Tab1</TabsItem>
             <TabsItem label='LineTab2'>This is Tab2</TabsItem>
-            <TabsItem label='LineTab3' disabled={true}>This is Tab3</TabsItem>
+            <TabsItem label='LineTab3' disabled>This is Tab3</TabsItem>
        </Tabs>
        <Tabs type='card'>
             <TabsItem label='CardTab1'>This is Tab1</TabsItem>
             <TabsItem label='Cardtab2'>This is Tab2</TabsItem>
             <TabsItem label='Cardtab3' disabled={true}>This is Tab3</TabsItem>
        </Tabs>
+
          <Menu onSelect={(index) => { alert(index) }} mode="vertical">
           <MenuItem>cool link</MenuItem>
           <MenuItem disabled>cool link2</MenuItem>
@@ -44,6 +45,7 @@ function App() {
           </SubMenu>
           <MenuItem>cool link3</MenuItem>
         </Menu>
+
         <Button className="custom" onClick={() => { alert('123') }}>Hello</Button>
         <Button disabled>Disabled Button</Button>
         <Button size={ButtonSize.Large} btnType={ButtonType.Primary}>Large Primary</Button>

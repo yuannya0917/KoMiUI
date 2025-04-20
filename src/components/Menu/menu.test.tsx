@@ -3,7 +3,6 @@ import{fireEvent, render,RenderResult,cleanup, waitFor}from '@testing-library/re
 
 import Menu,{MenuProps}from'./menu'
 import MenuItem from "./menuItem";
-import exp from "constants";
 import SubMenu from "./subMenu";
 
 const testProps:MenuProps={

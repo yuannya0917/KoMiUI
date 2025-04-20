@@ -71,7 +71,7 @@ const Tabs:React.FC<TabsProps>=({
     }
     return(
         <>
-            <div className={classes}>
+            <div className={classes} data-testid="tabs-test">
                 <ul className="tabs-ul" style={style}>
                     <TabsContext.Provider value={passedContext}>
                         {renderChildren()}
