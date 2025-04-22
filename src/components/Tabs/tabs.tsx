@@ -21,7 +21,7 @@ export interface ItabsContext{
 }
 
 export const TabsContext=createContext<ItabsContext>({index:0})
-const Tabs:React.FC<TabsProps>=({
+export const Tabs:React.FC<TabsProps>=({
     defaultIndex=0,
     className,
     type='line',

@@ -22,7 +22,7 @@ export interface ImenuContext{
 
 export const MenuContext=createContext<ImenuContext>({index:'0'})
 
-const Menu:React.FC<MenuProps>=({
+export const Menu:React.FC<MenuProps>=({
     className,
     mode='horizontal',
     style,

@@ -13,7 +13,11 @@ export interface SubMenuProps{
     children?:React.ReactNode
 }
 
-const SubMenu:React.FC<SubMenuProps>=({index,title,className,children})=>{
+export const SubMenu:React.FC<SubMenuProps>=({
+    index,
+    title,
+    className,
+    children})=>{
     const[menuOpen,setOpen]=useState(false);
     const nodeRef=useRef(null)
     const context=useContext(MenuContext)

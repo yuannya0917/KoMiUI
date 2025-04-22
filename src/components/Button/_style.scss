@@ -8,6 +8,7 @@
     text-align: center;     //不换行
     vertical-align: middle;     //居中对齐
     background-image: none;
+    border: $btn-border-width solid transparent;
     @include button-size($btn-padding-y,$btn-padding-x,$btn-font-size,$border-radius);  
     box-shadow: $btn-box-shadow;
     cursor: pointer;        //鼠标悬停显示
@@ -23,6 +24,7 @@
             pointer-events:none;
         }
     }
+
 }
 
 .btn-lg{
@@ -50,6 +52,7 @@
     color:$btn-link-color;
     text-decoration: $link-decoration;
     box-shadow:none;
+
     &:hover{
         color:$btn-link-hover-color;
         text-decoration: $link-hover-decoration;

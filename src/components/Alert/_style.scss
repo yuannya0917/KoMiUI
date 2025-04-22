@@ -1,5 +1,5 @@
 .alert {
-    //display: block;
+    //display: flex;
     width: $alert-width;
     @include alert-color($primary, $white);
     border-radius: $alert-border-radius;

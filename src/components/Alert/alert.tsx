@@ -2,16 +2,11 @@ import React ,{useRef, useState}from "react";
 import classNames from "classnames";
 import Transition from "../Transition/transition";
 
-export enum AlertType{
-    Success='success',
-    Default='default',
-    Danger='danger',
-    Warning='warning'
-}
+export type AlertType='success'|'default'|'danger'|'warning'
 
 export interface BaseAlertProps{
     className?:string,
-    title?:string,
+    title:string,
     description?:string,
     type?:AlertType,
     onClose?:()=>void,
@@ -19,7 +14,7 @@ export interface BaseAlertProps{
     children?:React.ReactNode;
 }
 
-const Alert:React.FC<BaseAlertProps>=({
+export const Alert:React.FC<BaseAlertProps>=({
     className,
     title,
     description,

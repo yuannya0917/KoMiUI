@@ -30,7 +30,7 @@ function App() {
             <TabsItem label='Cardtab3' disabled={true}>This is Tab3</TabsItem>
        </Tabs>
 
-         <Menu onSelect={(index) => { alert(index) }} mode="vertical">
+         <Menu onSelect={(index) => { alert(index) }} mode='vertical'>
           <MenuItem>cool link</MenuItem>
           <MenuItem disabled>cool link2</MenuItem>
           <SubMenu title='dropdown'>
@@ -55,9 +55,9 @@ function App() {
         <Button size={'sm'} btnType={'danger'}>Small Primary</Button>
         <Button btnType={'link'} href="https://www.bilibili.com/" target="_blank">Bilibili Link</Button>
         <Button btnType={'link'} disabled>Disabled Link</Button>
-        <Alert type={AlertType.Success} title='this is success!'></Alert>
-        <Alert type={AlertType.Danger} title='this is danger!'></Alert>
-        <Alert type={AlertType.Warning} title='this is warning!' closable={false}></Alert>
+        <Alert type='success' title='this is success!'></Alert>
+        <Alert type='danger' title='this is danger!'></Alert>
+        <Alert type='warning' title='this is warning!' closable={false}></Alert>
         <Alert
           description="this is a long description"
           onClose={function noRefCheck() { }}

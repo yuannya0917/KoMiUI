@@ -3,7 +3,7 @@ import {render,fireEvent,waitFor}from'@testing-library/react'
 import Alert,{AlertType,BaseAlertProps} from "./alert";
 
 const testProps:BaseAlertProps={
-    type:AlertType.Default,
+    type:'default',
     title:"testAlert",
     description:"testDescription",
     closable:true,
@@ -12,7 +12,7 @@ const testProps:BaseAlertProps={
 
 const testSuccessAlertProp:BaseAlertProps={
     closable:true,
-    type:AlertType.Success,
+    type:'success',
     title:"testSuccessAlert"
 }
 
