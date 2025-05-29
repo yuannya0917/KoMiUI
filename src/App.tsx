@@ -10,6 +10,10 @@ import { buildTimeValue } from '@testing-library/user-event/dist/utils';
 import { format } from 'path';
 import Icon from './components/Icon/icon';
 import Transition from './components/Transition/transition';
+import { Input } from './components/Input/input';
+import { faCoffee } from '@fortawesome/free-solid-svg-icons';
+import { Select } from './components/Select/select';
+import { Option } from './components/Select/option';
 
 
 function App() {
@@ -19,6 +23,16 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <Icon icon="xmark"></Icon>
+        <Select placeholder='hello'>
+          <Option value='banana'>香蕉</Option>
+          <Option value='watermelon'>西瓜</Option>
+          <Option value='strawberry'>草莓</Option>
+          <Option value='nihao' disabled>hello</Option>
+        </Select>
+        <Input placeholder='holder' icon={faCoffee} size='lg'></Input>
+        <Input placeholder='holder' append='append' size='sm'></Input>
+        <Input placeholder='holder' prepend='preappend'></Input>
         <Tabs type='line'>
             <TabsItem label='LineTab1'>This is Tab1</TabsItem>
             <TabsItem label='LineTab2'>This is Tab2</TabsItem>

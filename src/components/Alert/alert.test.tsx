@@ -39,17 +39,14 @@ describe('test Alert component',()=>{
                     
             }
 
-        const closeButton = wrapper.queryByText('×');
-        if(closeButton){
+        const closeButton = wrapper.getByTestId("alert-close")
             fireEvent.click(closeButton);
-        }
         await waitFor(() => {
-        expect(element).not.toBeInTheDocument();
-        });
-                
+            expect(element).not.toBeInTheDocument();
+        },{timeout:1000});
     })
 
-    it('should render the orher type Alert',async()=>{
+    it('should render the other type Alert',async()=>{
         const wrapper = render(<Alert {...testSuccessAlertProp}></Alert>);
         const element = wrapper.getByText('testSuccessAlert');
 
@@ -58,12 +55,10 @@ describe('test Alert component',()=>{
         expect(element).toHaveClass('alert-title');
         expect(element.parentNode).toHaveClass('alert alert-success');
 
-        const closeButton = wrapper.queryByText('×');
-        if(closeButton){
-            fireEvent.click(closeButton);
-        }
+        const closeButton = wrapper.getByTestId("alert-close")
+        fireEvent.click(closeButton);
         await waitFor(() => {
-        expect(element).not.toBeInTheDocument();
-        });
+            expect(element).not.toBeInTheDocument();
+        },{timeout:1000});
     })
 })

@@ -1,6 +1,7 @@
 import React ,{useRef, useState}from "react";
 import classNames from "classnames";
 import Transition from "../Transition/transition";
+import Icon from "../Icon/icon";
 
 export type AlertType='success'|'default'|'danger'|'warning'
 
@@ -39,14 +40,14 @@ export const Alert:React.FC<BaseAlertProps>=({
         <Transition 
         in={visible} 
         animation="zoom-in-top" 
-        timeout={300} 
+        timeout={0} 
         nodeRef={nodeRef} 
         appear
         unmountOnExit>
             <div className={classes} ref={nodeRef}>
                 {title?<h4 className="alert-title">{title}</h4>:null}
                 <p className="alert-message">{description}</p>
-                {closable?<button className="close" onClick={handleClick}>×</button>:null}
+                {closable?<Icon icon="xmark" onClick={handleClick} className="alert-close" data-testid="alert-close"></Icon>:null}
             </div>
         </Transition>
     )
