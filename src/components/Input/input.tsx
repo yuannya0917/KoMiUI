@@ -16,7 +16,7 @@ export interface InputProps extends Omit<InputHTMLAttributes<HTMLElement>,'size'
 }
 
 export const Input:React.FC<InputProps>=({
-    disabled,
+    disabled=false,
     size,
     icon,
     prepend,
@@ -37,7 +37,7 @@ export const Input:React.FC<InputProps>=({
     return(
         <div className={classes} style={style}>
             {prepend&&(<div className="komi-input-group-prepend">{prepend}</div>)}
-            {icon&&<div className="icon-wrapper" onClick={disabled?()=>{}:onIconClick}><Icon icon={icon} className="input-icon" data-testid="icon"></Icon></div>}
+            {icon&&<div className="icon-wrapper" onClick={disabled?undefined:onIconClick}><Icon icon={icon} className="input-icon" data-testid="icon"></Icon></div>}
             <input className="komi-input-inner" disabled={disabled} {...restProps}></input>
             {append&&<div className="komi-input-group-append">{append}</div>}
         </div>

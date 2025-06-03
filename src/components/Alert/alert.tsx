@@ -40,7 +40,7 @@ export const Alert:React.FC<BaseAlertProps>=({
         <Transition 
         in={visible} 
         animation="zoom-in-top" 
-        timeout={0} 
+        timeout={300} 
         nodeRef={nodeRef} 
         appear
         unmountOnExit>

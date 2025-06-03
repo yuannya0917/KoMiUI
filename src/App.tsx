@@ -14,16 +14,56 @@ import { Input } from './components/Input/input';
 import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 import { Select } from './components/Select/select';
 import { Option } from './components/Select/option';
+import AutoComplete ,{DataSourceType}from './components/AutoComplete/autoComplete';
 
 
 function App() {
   const[show,setShow]=useState(false)
   const nodeRef=useRef(null)
   const nodeRef1=useRef(null)
+
+  interface LakerPlayerProps{
+    value?:string;
+    number?:number
+  }
+
+  interface GithubUserProps{
+    login?:string;
+    url?:string;
+    avatar_url:string
+  }
+
+const testArray = [
+    { value: 'ab', number: 11 },
+    { value: 'abc', number: 1 },
+    { value: 'b', number: 4 },
+    { value: 'c', number: 15 },
+]
+
+const fetchSuggestion=(query:string) => {return testArray.filter(item=>item.value.includes(query))}
+
+  const handleFetch=(query:string)=>{
+    return fetch(`https://api.github.com/search/users?q=${query}`)
+      .then(res => res.json())
+      .then(({ items }) => {
+        return items.slice(0, 10).map((item: any) => ({ value: item.login, ...item}))
+      })
+  }
+
+  const renderOption = (item: DataSourceType) => {
+    const itemWithGithub = item as DataSourceType<GithubUserProps>
+    return (
+      <>
+        <b>Name: {itemWithGithub.value}</b>
+        <span>url: {itemWithGithub.url}</span>
+      </>
+    )
+  }
+
   return (
     <div className="App">
       <header className="App-header">
-        <Icon icon="xmark"></Icon>
+        <AutoComplete fetchSuggestion={fetchSuggestion}></AutoComplete>
         <Select placeholder='hello'>
           <Option value='banana'>香蕉</Option>
           <Option value='watermelon'>西瓜</Option>

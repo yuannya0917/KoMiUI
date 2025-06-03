@@ -1,0 +1,49 @@
+.komi-auto-complete{
+    .item-highlighted{
+    background-color: $primary;
+    color:$white
+    }
+
+    .komi-input-wrapper{
+        width: 100%;
+        max-width: 650px;
+    }
+
+    ul{
+        list-style: none;
+        position: absolute;
+        margin:10px;
+        z-index:10;
+        width: 100%;
+        background-color: $white;
+        max-width: 650px;
+        border: $select-options-border-width solid $select-options-border-color;
+        box-shadow: $select-options-shadow;
+        margin-top: $spacer/2;
+        padding-left: 0;
+    }
+
+    li{
+        display: flex;
+        align-items: center;
+        //justify-content: space-between;
+        padding: $select-options-padding-y $select-options-padding-x;
+        font-family: $select-options-font-family;
+        font-size: $select-options-font-size;
+        font-weight: $select-options-font-weight;
+        line-height: $select-options-line-height;
+        &:hover,
+        &:focus {
+            color: $primary;
+            cursor: default;
+        }
+    }
+
+    .ul-icon{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 3rem;
+    }
+}
+
