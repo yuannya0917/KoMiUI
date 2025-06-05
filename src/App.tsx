@@ -1,4 +1,4 @@
-import React, { useState ,useRef} from 'react';
+import React, { useState ,useRef, useEffect} from 'react';
 import Button, { ButtonType, ButtonSize } from './components/Button/button';
 import Alert, { AlertType } from './components/Alert/alert'
 import Menu from './components/Menu/menu';
@@ -15,9 +15,11 @@ import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 import { Select } from './components/Select/select';
 import { Option } from './components/Select/option';
 import AutoComplete ,{DataSourceType}from './components/AutoComplete/autoComplete';
-
+// import axios from 'axios';
+import Upload from './components/Upload/upload';
 
 function App() {
+  const [title,setTitle]=useState(' ')
   const[show,setShow]=useState(false)
   const nodeRef=useRef(null)
   const nodeRef1=useRef(null)
@@ -60,9 +62,36 @@ const fetchSuggestion=(query:string) => {return testArray.filter(item=>item.valu
     )
   }
 
+
+  // const handleFileChange=(e:React.ChangeEvent<HTMLInputElement>)=>{
+  //   const files=e.target.files
+  //   if(files){
+  //     const uploadedFile=files[0]
+  //     const formData=new FormData()
+  //     formData.append(uploadedFile.name,uploadedFile)
+  //     axios.post("",formData,{
+        
+  //     }).then(resp=>{
+  //       console.log(resp)
+  //     })
+  //   }
+  // }
+
+
   return (
     <div className="App">
       <header className="App-header">
+        <Upload
+          action='https://jsonplaceholder.typicode.com/posts'
+          name='fileName'
+          data={{ 'key': 'value' }}
+          headers={{ 'x-Powered-By': 'komiUI' }}
+          accept='.jpg'
+          multiple
+          drag
+        >
+          Drag file over to upload
+        </Upload>
         <AutoComplete fetchSuggestion={fetchSuggestion}></AutoComplete>
         <Select placeholder='hello'>
           <Option value='banana'>香蕉</Option>

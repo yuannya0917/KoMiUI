@@ -1,0 +1,100 @@
+.komi-upload-list {
+    padding-left: 0;
+}
+
+.komi-upload-list-item {
+    border-radius: $btn-border-radius;
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: .5rem;
+    padding-right: .5rem;
+    max-width: $input-max-width;
+    min-height: 30px;
+    width: 100%;
+    font-size: $uploadlist-font-size;
+    line-height: $uploadlist-line-height;
+    justify-content: center;
+    align-items: center;
+
+    .file-name {
+        display: inline-block;
+
+        .komi-icon {
+            margin-right: .5 * $uploadlist-icon-size;
+        }
+    }
+    .file-status {
+        display: inline-block;
+    }
+
+    .file-actions {
+        display: none;
+    }
+
+    .file-name-success {
+        color: $success;
+        .komi-icon{
+            color: $success;
+        }
+    }
+
+    .file-name-error {
+        color: $danger;
+        .komi-icon{
+            color: $danger;
+        }
+    }
+
+    .file-actions,
+    .file-status {
+        width: $uploadlist-icon-size;
+        text-align: center;
+        margin-left: auto;
+    }
+
+    &:hover {
+        background-color: $gray-200;
+
+        .file-actions {
+            color: $primary;
+            display: inline-block;
+        }
+
+        .file-status {
+            display: none;
+        }
+    }
+
+
+    .komi-progress-bar{
+        text-align: center;
+        margin-left: auto;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.komi-uploader-dragger {
+    display: flex;
+    flex-wrap: wrap;
+    width: 300px;
+    height: 160px;
+    background-color:$white;
+    justify-content: center;
+    align-items: center;
+    border: 1px dashed $gray-300;
+    .komi-icon{
+        font-size: 90px;
+        flex-basis: 100%;
+        color: $gray-600;
+    }
+
+    &:hover{
+        border: 1px dashed $primary;
+    }
+
+    &.is-dragover{
+        background: #f3d8d8;
+        border: 2px dashed $primary;
+    }
+}
