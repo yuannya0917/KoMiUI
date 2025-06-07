@@ -8,7 +8,6 @@ import Transition from "../Transition/transition";
 
 export interface SelectProps extends Omit<SelectHTMLAttributes<HTMLElement>,'onChange'>{
     className?:string;
-    defaultValueArr?:string[];
     placeholder:string;
     disabled?:boolean;
     multiple?:boolean;

@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import Input from './input';
+import Input from './input'; 
 
 const input:Meta<typeof Input>={
     title:'Input',
@@ -12,6 +12,33 @@ const input:Meta<typeof Input>={
         },
         layout:'left'
     },
+
+    argTypes:{
+        disabled:{
+            description:"是否禁用 Input"
+        },
+
+        size:{
+            description:"设置input大小，支持lg，sm"
+        },
+
+        icon:{
+            description:"添加图标，在右侧悬浮添加一个图标，用于提示"
+        },
+
+        prepend:{
+            description:"添加前缀 用于配置一些固定组合"
+        },
+
+        append:{
+            description:"添加后缀 用于配置一些固定组合"
+        },
+
+        onIconClick:{
+            description:"有图标时，点击图标后执行的函数"
+        }
+        
+    }
 }
 
 export default input;

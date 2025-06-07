@@ -43,6 +43,48 @@ const autoComplete:Meta<typeof AutoComplete>={
         },
         layout:'center'
     },
+
+    argTypes:{
+        fetchSuggestion:{
+            description:"返回输入建议的方法，可以拿到当前的输入，然后返回同步的数组或者是异步的 Promise type DataSourceType = T & DataSourceObject"
+        },
+
+        onSelect:{
+            description:"点击选中建议项时触发的回调"
+        },
+
+        onChange:{
+            description:"文本框发生改变的时候触发的事件"
+        },
+
+        renderOption:{
+            description:"支持自定义渲染下拉项，返回 ReactElement"
+        },
+
+        size:{
+            description:"设置 input 大小，支持 lg 或者是 sm"
+        },
+
+        disabled:{
+            description:"是否禁用 Input"
+        },
+
+        icon:{
+            description:"添加图标，在右侧悬浮添加一个图标，用于提示"
+        },
+
+        prepend:{
+            description:"添加前缀 用于配置一些固定组合"
+        },
+        
+        append:{
+            description:"添加后缀 用于配置一些固定组合"
+        },
+
+        onIconClick:{
+            description:"有icon时点击后执行的函数"
+        }
+    }
 }
 
 export default autoComplete;

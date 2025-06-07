@@ -19,7 +19,7 @@ const tabs:Meta<typeof Tabs>={
 
     argTypes:{
         defaultIndex:{
-            
+            description:"当前激活 tab 面板的 index，默认为0"
         },
 
         className:{
@@ -27,12 +27,13 @@ const tabs:Meta<typeof Tabs>={
         },
 
         onSelect:{
-
+            description:"点击 Tab 触发的回调函数"
         },
 
         type: {
             options: ['line', 'card'],
-            control: { type: 'radio' }
+            control: { type: 'radio' },
+            description:"Tabs的样式，两种可选，默认为 line"
         },
 
         style:{

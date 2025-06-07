@@ -1,3 +1,5 @@
+@use "../../styles/variables";
+
 .komi-tabs {
     list-style: none;
     margin: 0;
@@ -11,8 +13,8 @@
 
         .tabs-item {
             cursor: pointer;
-            padding: $tabs-label-padding-y $tabs-label-padding-x;
-            border-bottom: $tabs-border-width solid $tabs-border-color;
+            padding: variables.$tabs-label-padding-y variables.$tabs-label-padding-x;
+            border-bottom: variables.$tabs-border-width solid variables.$tabs-border-color;
 
             &:hover,
             &:focus {
@@ -20,27 +22,27 @@
             }
 
             &.is-disabled {
-                color: $menu-item-disabled-color;
+                color: variables.$menu-item-disabled-color;
                 pointer-events: none;
                 cursor: default;
             }
 
             &.is-active,
             &:hover {
-                color: $menu-item-active-color;
+                color: variables.$menu-item-active-color;
             }
         }
     }
 
     >div.tabs-div{
-        padding: $tabs-content-padding-y $tabs-label-padding-x;
+        padding: variables.$tabs-content-padding-y variables.$tabs-label-padding-x;
     }
 }
 
 .tabs-line{
     .tabs-item{
         &.is-active{
-        box-shadow:inset 0 -2px 0 0 $menu-item-active-color;
+        box-shadow:inset 0 -2px 0 0 variables.$menu-item-active-color;
     }
     }
 }
@@ -49,10 +51,10 @@
     .tabs-ul{
         .tabs-item{
         &.is-active{ 
-             border:$tabs-border-width solid $tabs-border-color;
+             border:variables.$tabs-border-width solid variables.$tabs-border-color;
              border-bottom: none;
-             border-top-left-radius:$tabs-label-border-radius ;
-             border-top-right-radius:$tabs-label-border-radius ;
+             border-top-left-radius:variables.$tabs-label-border-radius ;
+             border-top-right-radius:variables.$tabs-label-border-radius ;
         }
     }
     }

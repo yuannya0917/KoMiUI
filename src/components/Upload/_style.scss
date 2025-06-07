@@ -1,18 +1,20 @@
+@use "../../styles/variables";
+
 .komi-upload-list {
     padding-left: 0;
 }
 
 .komi-upload-list-item {
-    border-radius: $btn-border-radius;
+    border-radius: variables.$btn-border-radius;
     display: flex;
     flex-wrap: wrap;
     padding-left: .5rem;
     padding-right: .5rem;
-    max-width: $input-max-width;
+    max-width: variables.$input-max-width;
     min-height: 30px;
     width: 100%;
-    font-size: $uploadlist-font-size;
-    line-height: $uploadlist-line-height;
+    font-size: variables.$uploadlist-font-size;
+    line-height: variables.$uploadlist-line-height;
     justify-content: center;
     align-items: center;
 
@@ -20,7 +22,7 @@
         display: inline-block;
 
         .komi-icon {
-            margin-right: .5 * $uploadlist-icon-size;
+            margin-right: .5 * variables.$uploadlist-icon-size;
         }
     }
     .file-status {
@@ -32,31 +34,31 @@
     }
 
     .file-name-success {
-        color: $success;
+        color: variables.$success;
         .komi-icon{
-            color: $success;
+            color: variables.$success;
         }
     }
 
     .file-name-error {
-        color: $danger;
+        color: variables.$danger;
         .komi-icon{
-            color: $danger;
+            color: variables.$danger;
         }
     }
 
     .file-actions,
     .file-status {
-        width: $uploadlist-icon-size;
+        width: variables.$uploadlist-icon-size;
         text-align: center;
         margin-left: auto;
     }
 
     &:hover {
-        background-color: $gray-200;
+        background-color: variables.$gray-200;
 
         .file-actions {
-            color: $primary;
+            color: variables.$primary;
             display: inline-block;
         }
 
@@ -79,22 +81,22 @@
     flex-wrap: wrap;
     width: 300px;
     height: 160px;
-    background-color:$white;
+    background-color:variables.$white;
     justify-content: center;
     align-items: center;
-    border: 1px dashed $gray-300;
+    border: 1px dashed variables.$gray-300;
     .komi-icon{
         font-size: 90px;
         flex-basis: 100%;
-        color: $gray-600;
+        color: variables.$gray-600;
     }
 
     &:hover{
-        border: 1px dashed $primary;
+        border: 1px dashed variables.$primary;
     }
 
     &.is-dragover{
         background: #f3d8d8;
-        border: 2px dashed $primary;
+        border: 2px dashed variables.$primary;
     }
 }

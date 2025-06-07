@@ -1,22 +1,25 @@
+@use "../../styles/mixin";
+@use "../../styles/variables";
+
 .alert {
     //display: flex;
-    width: $alert-width;
-    @include alert-color($primary, $white);
-    border-radius: $alert-border-radius;
-    border-width:$border-width;
+    width: variables.$alert-width;
+    @include mixin.alert-color(variables.$primary, variables.$white);
+    border-radius: variables.$alert-border-radius;
+    border-width:variables.$border-width;
     border-style: solid;
-    padding: $btn-padding-y $btn-padding-x;
+    padding: variables.$btn-padding-y variables.$btn-padding-x;
 
     h4.alert-title {
         margin-bottom: 0;
-        line-height:$alert-line-height;
-        font-size: $alert-title-font-size;
+        line-height:variables.$alert-line-height;
+        font-size: variables.$alert-title-font-size;
     }
     p.alert-message {
         margin-top: 0;
         margin-bottom: 0;
-        line-height: $alert-line-height;
-        font-size: $alert-message-font-size;
+        line-height: variables.$alert-line-height;
+        font-size: variables.$alert-message-font-size;
     }
 
     .alert-close{
@@ -29,21 +32,21 @@
     position: relative;
     > i:last-child {
         position: absolute;
-        right: $alert-icon-right;
-        top: $alert-icon-top;
+        right: variables.$alert-icon-right;
+        top: variables.$alert-icon-top;
         font-style: normal;
         cursor: pointer;
-        font-weight: $alert-icon-font-weight;
-        font-size: $alert-icon-font-size;
+        font-weight: variables.$alert-icon-font-weight;
+        font-size: variables.$alert-icon-font-size;
     }
 }
 
 .alert-success {
-    @include alert-color($success, $white);
+    @include mixin.alert-color(variables.$success, variables.$white);
 }
 .alert-danger {
-    @include alert-color($danger, $white);
+    @include mixin.alert-color(variables.$danger, variables.$white);
 }
 .alert-warning {
-    @include alert-color($warning, $white);
+    @include mixin.alert-color(variables.$warning, variables.$white);
 }

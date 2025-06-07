@@ -92,7 +92,7 @@ const fetchSuggestion=(query:string) => {return testArray.filter(item=>item.valu
         >
           Drag file over to upload
         </Upload>
-        <AutoComplete fetchSuggestion={fetchSuggestion}></AutoComplete>
+        <AutoComplete fetchSuggestion={fetchSuggestion} append={'append'}></AutoComplete>
         <Select placeholder='hello'>
           <Option value='banana'>香蕉</Option>
           <Option value='watermelon'>西瓜</Option>

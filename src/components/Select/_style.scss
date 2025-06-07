@@ -1,8 +1,11 @@
+@use "../../styles/variables";
+@use "sass:math";
+
 .komi-select {
 
     .komi-select-input {
         margin-bottom: 0px;
-        background-color: $white;
+        background-color: variables.$white;
         &.optionsInInput {
             position: relative;
         }
@@ -14,7 +17,7 @@
             }
 
             &:hover {
-                border-color: $primary !important;
+                border-color: variables.$primary !important;
             }
         }
 
@@ -27,7 +30,7 @@
         
 
         input[readonly] {
-            background-color: $white;
+            background-color: variables.$white;
         }
     }
 
@@ -40,7 +43,7 @@
 
         &.is-disabled{
             input[readonly]{
-                background-color: $input-group-addon-bg !important; ;
+                background-color: variables.$input-group-addon-bg !important; ;
             }
         }
 
@@ -49,11 +52,11 @@
         margin: 10px;
         z-index: 10;
         width: 100%;
-        background-color: $white;
-        max-width: $select-options-max-width;
-        border: $select-options-border-width solid $select-options-border-color;
-        box-shadow: $select-options-shadow;
-        margin-top: $spacer/2;
+        background-color: variables.$white;
+        max-width: variables.$select-options-max-width;
+        border: variables.$select-options-border-width solid variables.$select-options-border-color;
+        box-shadow: variables.$select-options-shadow;
+        margin-top: math.div(variables.$spacer, 2);
         padding-left: 0;
     }
 
@@ -63,27 +66,27 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: $select-options-padding-y $select-options-padding-x;
-    font-family: $select-options-font-family;
-    font-size: $select-options-font-size;
-    font-weight: $select-options-font-weight;
-    line-height: $select-options-line-height;
+    padding: variables.$select-options-padding-y variables.$select-options-padding-x;
+    font-family: variables.$select-options-font-family;
+    font-size: variables.$select-options-font-size;
+    font-weight: variables.$select-options-font-weight;
+    line-height: variables.$select-options-line-height;
 
     &:hover,
     &:focus {
-        background-color: $option-bg-color;
+        background-color: variables.$option-bg-color;
     }
 
     &.is-selected {
-        color: $primary;
+        color: variables.$primary;
         font-weight: 900;
     }
 
     &.is-disabled {
         cursor: not-allowed;
-        opacity: $btn-disabled-opacity;
+        opacity: variables.$btn-disabled-opacity;
         box-shadow: none;
-        background-color: $white;
+        background-color: variables.$white;
 
         >* {
             pointer-events: none;
